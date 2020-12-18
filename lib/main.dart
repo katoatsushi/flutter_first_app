@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/next_page.dart';
-import 'package:flutter_app/main_model.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
-
-import 'book_list_page.dart';
+import 'presentation/book_list/book_list_page.dart';
+import 'presentation/main/main_model.dart';
 
 void main() {
   debugPaintSizeEnabled = true;
