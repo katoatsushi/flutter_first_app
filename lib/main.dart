@@ -4,6 +4,8 @@ import 'package:flutter_app/main_model.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
+import 'book_list_page.dart';
+
 void main() {
   debugPaintSizeEnabled = true;
   runApp(MyApp());
@@ -51,10 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(model.gonzaText),
                     RaisedButton(child: Text('ボタン'),
+                        // Within the `FirstRoute` widget
                         onPressed: () {
-                          //TODO:: ボタンの処理内容を記載
-                          model.changeGonzaText();
-                        },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BookList()),
+                          );
+                        }
                     ),
                   ],
                 ),
