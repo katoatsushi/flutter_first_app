@@ -16,10 +16,24 @@ class BookListPage extends StatelessWidget {
         ),
         body: Consumer<BookListModel>(
             builder: (context,model, child) {
-              final books = model.booksdayo;
+              final books = model.books;
               final ListTitles = books.map(
-                    (booktantai) => ListTile(
-                      title: Text(booktantai.title),
+                    (book) => ListTile(
+                      title: Text(book.title),
+                      trailing: IconButton(
+                        icon: Icon(Icons.edit),
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            //TODO::編集画面へ
+                            MaterialPageRoute(builder: (context) => AddBookPage(
+                              book: book,
+                            ),
+                              fullscreenDialog: true,
+                            ),
+                          );
+                        },
+                      ),
                     ),
               ).toList();
               return ListView(
@@ -31,8 +45,8 @@ class BookListPage extends StatelessWidget {
             builder: (context,model, child) {
             return FloatingActionButton(
               child: Icon(Icons.add),
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                 await Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AddBookPage(),
                     // 画面遷移が下からひゅっと出てくる

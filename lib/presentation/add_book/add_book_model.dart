@@ -16,4 +16,14 @@ class AddBookModel extends ChangeNotifier {
          'createdAt': Timestamp.now(),
        });
  }
+ Future updateBook(Book book)  async {
+   final document =
+        Firestore.instance.collection('books').document(book.documentID);
+   await document.updateData(
+     {
+     'title': bookTitle,
+     'updateAt': Timestamp.now(),
+     },
+   );
+ }
 }
