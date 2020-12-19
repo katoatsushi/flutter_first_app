@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/next_page.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/presentation/sign_up/sign_up_page.dart';
 import 'package:provider/provider.dart';
 import 'presentation/book_list/book_list_page.dart';
 import 'presentation/main/main_model.dart';
@@ -57,6 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => BookListPage()),
+                          );
+                        }
+                    ),
+                    RaisedButton(child: Text('新規登録'),
+                        // Within the `FirstRoute` widget
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignUpPage()),
                           );
                         }
                     ),

@@ -30,6 +30,8 @@ class AddBookPage extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(children: <Widget>[
                   TextField(
+                    decoration: InputDecoration(
+                        hintText: "本のタイトルを入力してください。"),
                     controller: textEditingController,
                     onChanged: (text){
                       model.bookTitle = text;
@@ -69,18 +71,13 @@ class AddBookPage extends StatelessWidget {
                 FlatButton(child: Text('OK!'),
                   onPressed: () {
                     // Navigator.of(context).pop();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BookListPage(),
-                        // 画面遷移が下からひゅっと出てくる
-                        fullscreenDialog: true,
-                      ),
-                    );
+                    Navigator.of(context).pop();
                   },)
               ],
             );
           }
       );
+      Navigator.of(context).pop();
     } catch (e) {
       // うまくいかなかっ場合
       showDialog(
@@ -115,18 +112,13 @@ class AddBookPage extends StatelessWidget {
                 FlatButton(child: Text('OK!'),
                   onPressed: () {
                     // Navigator.of(context).pop();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BookListPage(),
-                        // 画面遷移が下からひゅっと出てくる
-                        fullscreenDialog: true,
-                      ),
-                    );
+                    Navigator.of(context).pop();
                   },)
               ],
             );
           }
       );
+      Navigator.of(context).pop();
     } catch (e) {
       // うまくいかなかっ場合
       showDialog(
